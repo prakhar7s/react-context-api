@@ -13,3 +13,32 @@ define updating func in ContextProvider Class Component
 create another component to change 
 access that func in that component
 and BOOM change the data
+
+While working with multiple contexts
+Order of wrapping context doesn't matter much
+example
+1.
+
+<ThemeContextProvider>
+    <AuthContextProvider>
+
+        <Navbar />
+        <BookList />
+        <ThemeToggle />
+
+    </AuthContextProvider>
+</ThemeContextProvider>
+
+2.
+
+<AuthContextProvider>
+    <ThemeContextProvider>
+
+        <Navbar />
+        <BookList />
+        <ThemeToggle />
+
+    </ThemeContextProvider>
+</AuthContextProvider>
+
+both are same.
