@@ -42,3 +42,27 @@ example
 </AuthContextProvider>
 
 both are same.
+
+To consume multiple contexts we have two ways
+1. use 1 static context and rest Consumer context
+2. use all Consumer contexts [ nexted ] -> next Consumer top of each other and destructure data of 
+each context at the lowest Consumer
+
+example
+
+<AuthContext.Consumer>
+                {(authContext) => (
+                <ThemeContext.Consumer>
+                    {(themeContext) => {
+                    const { isAuthenticated } = authContext;
+                    const { isLightTheme, light, dark } = themeContext;
+                    const theme = isLightTheme ? light : dark;
+                    return (
+                        <nav style={{ background: theme.ui, color: theme.syntax }}>
+                        <div>{isAuthenticated ? "Logged in" : "Logged out"}</div>
+                        </nav>
+                    );
+                    }}
+                </ThemeContext.Consumer>
+                )}
+</AuthContext.Consumer>
