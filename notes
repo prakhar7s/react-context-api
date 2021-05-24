@@ -1,0 +1,15 @@
+First we need to create context using createContext() from react
+
+then we have to create Provider which we hold all the data that you need to share between different  components.
+
+then to access Context data there are mainly two ways:
+1. static context [only for class based component]
+2. Using consumer which takes callback [ for both ]
+
+so which to choose both are good but by using Conusmer we can convert Class -> Functional Component easily and we access multiple  context data but those things not possible in static context.
+
+To update context:
+define updating func in ContextProvider Class Component
+create another component to change 
+access that func in that component
+and BOOM change the data
