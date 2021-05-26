@@ -5,6 +5,7 @@ then we have to create Provider which we hold all the data that you need to shar
 then to access Context data there are mainly two ways:
 1. static context [only for class based component]
 2. Using consumer which takes callback [ for both ]
+3. using useContext much cleaner then 2nd way. [implemented in lession9]
 
 so which to choose both are good but by using Conusmer we can convert Class -> Functional Component easily and we access multiple  context data but those things not possible in static context.
 
@@ -66,3 +67,8 @@ example
                 </ThemeContext.Consumer>
                 )}
 </AuthContext.Consumer>
+
+
+in lession9,
+we have converted BookList class component to Functional component as used theme context using
+useContext() hook.
